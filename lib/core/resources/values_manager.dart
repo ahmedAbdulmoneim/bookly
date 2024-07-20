@@ -31,3 +31,17 @@ class AppSize {
   static const double s60 = 60.0;
   static const double s200 = 200.0;
 }
+
+class AppDuration {
+  static const int d1 = 1;
+  static const int d2 = 2;
+  static const int d3 = 3;
+  static const int d4 = 4;
+  static const int d5 = 5;
+  static const int d6 = 6;
+  static const int d7 = 7;
+  static const int d8 = 8;
+  static const int d9 = 9;
+  static const int d10 = 10;
+
+}

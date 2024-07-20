@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:splash_view/source/presentation/pages/splash_view.dart';
 
 import 'core/resources/theme_manager.dart';
 import 'features/splash/presentation/views/splash_view.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  GetMaterialApp(
       theme: getApplicationDarkTheme(),
-      home: const SplashView(),
+      home: const SplashViewScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
