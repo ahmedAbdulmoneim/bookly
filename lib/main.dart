@@ -14,8 +14,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  GetMaterialApp(
-      theme: getApplicationTheme(),
+      theme: getApplicationDarkTheme(),
       home: const SplashView(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
