@@ -1,5 +1,6 @@
 import 'package:bookly/core/resources/assets_manager.dart';
 import 'package:bookly/core/resources/values_manager.dart';
+import 'package:bookly/features/home_screen/presentation/view/home.dart';
 import 'package:bookly/features/splash/presentation/views/widgets/transitions/fade_transition.dart';
 import 'package:bookly/features/splash/presentation/views/widgets/transitions/slid_transition.dart';
 import 'package:flutter/material.dart';
@@ -30,16 +31,8 @@ class SplashViewBody extends StatelessWidget {
         ),
       ),
       duration: const Duration(seconds: AppDuration.d6),
-      done: Done(const NextScreen()),
+      done: Done(const HomeView()),
     );
   }
 }
 
-class NextScreen extends StatelessWidget {
-  const NextScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold();
-  }
-}
