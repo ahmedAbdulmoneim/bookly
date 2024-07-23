@@ -18,7 +18,7 @@ class SplashViewBody extends StatelessWidget {
         transitionedWidget: Text(
           'Read free books',
           textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.headlineMedium,
+          style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
       showStatusBar: true,
