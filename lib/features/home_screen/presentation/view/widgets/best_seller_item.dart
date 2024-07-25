@@ -13,13 +13,13 @@ class BestSellerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-          left: AppPadding.p30, right: AppPadding.p30, top: AppPadding.p20),
+          left: AppPadding.p30, right: AppPadding.p30,),
       child: SizedBox(
         height: 120,
         child: Row(
           children: [
             AspectRatio(
-              aspectRatio: 0.628,
+              aspectRatio: 0.666,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(AppSize.s8),
