@@ -7,7 +7,7 @@ import '../../features/splash/presentation/views/splash_view.dart';
 
 abstract class AppRoutes{
   static const homeViewRoute = "/homeView";
-  static const bookDetailsViewRoute = "/homeView";
+  static const bookDetailsViewRoute = "/bookDetailsView";
   static final  router = GoRouter(
     routes: <RouteBase>[
       GoRoute(
