@@ -13,7 +13,11 @@ ThemeData getApplicationDarkTheme() {
     textTheme: TextTheme(
 
       titleMedium: getSemiBoldStyle(color: ColorManger.whit,fontSize: FontSize.s16),
-      headlineMedium: getRegularStyle(color: Colors.white,fontSize: FontSize.s18)
+      headlineMedium: getRegularStyle(color: Colors.white,fontSize: FontSize.s18),
+      bodyLarge: getRegularStyle(color: Colors.white,fontSize: FontSize.s20,),
+      bodySmall: getRegularStyle(color: Colors.white,fontSize: FontSize.s14),
+      labelLarge: getBoldStyle(color: Colors.white,fontSize: FontSize.s20),
+      headlineSmall: getRegularStyle(color: Colors.white,fontSize: FontSize.s16)
     ),
   );
 

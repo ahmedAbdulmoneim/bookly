@@ -1,7 +1,8 @@
 import 'dart:ui';
 
 class FontConstants{
-  static const String fontFamily = 'Montserrat';
+  static const String mainFontFamily = 'Montserrat';
+  static const String kGtSectraFine = 'GT Sectra Fine';
 }
 
 class FontWeightManger{

@@ -1,7 +1,7 @@
 import 'package:bookly/core/resources/strings_manager.dart';
 import 'package:bookly/core/resources/values_manager.dart';
 import 'package:flutter/material.dart';
-
+import 'best_seller_item.dart';
 import 'custom_app_bar.dart';
 import 'custom_books_list.dart';
 
@@ -22,7 +22,8 @@ class HomeViewBody extends StatelessWidget {
             AppStrings.bestSeller,
             style: Theme.of(context).textTheme.headlineMedium,
           ),
-        )
+        ),
+        const BestSellerItem()
       ],
     );
   }
