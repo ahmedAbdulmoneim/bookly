@@ -1,7 +1,7 @@
+import 'package:bookly/core/resources/app_routes.dart';
+import 'package:bookly/features/home_screen/presentation/view/home.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:splash_view/source/presentation/pages/splash_view.dart';
-
+import 'package:go_router/go_router.dart';
 import 'core/resources/theme_manager.dart';
 import 'features/splash/presentation/views/splash_view.dart';
 
@@ -14,10 +14,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  GetMaterialApp(
+    return  MaterialApp.router(
+      routerConfig: AppRoutes.router,
       theme: getApplicationDarkTheme(),
-      home: const SplashViewScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
+

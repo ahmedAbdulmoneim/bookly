@@ -1,0 +1,33 @@
+import 'package:bookly/features/home_screen/presentation/view/book_details.dart';
+import 'package:bookly/features/home_screen/presentation/view/home.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../features/splash/presentation/views/splash_view.dart';
+
+abstract class AppRoutes{
+  static const homeViewRoute = "/homeView";
+  static const bookDetailsViewRoute = "/homeView";
+  static final  router = GoRouter(
+    routes: <RouteBase>[
+      GoRoute(
+        path: '/',
+        builder: (BuildContext context, GoRouterState state) {
+          return const SplashViewScreen();
+        },
+      ),
+      GoRoute(
+        path: homeViewRoute,
+        builder: (BuildContext context, GoRouterState state) {
+          return const HomeView();
+        },
+      ),
+      GoRoute(
+        path: bookDetailsViewRoute,
+        builder: (BuildContext context, GoRouterState state) {
+          return const BookDetails();
+        },
+      ),
+    ],
+  );
+}
