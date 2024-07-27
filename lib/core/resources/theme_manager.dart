@@ -19,6 +19,7 @@ ThemeData getApplicationDarkTheme() {
       labelLarge: getBoldStyle(color: Colors.white,fontSize: FontSize.s20),
       headlineSmall: getRegularStyle(color: Colors.white,fontSize: FontSize.s16),
       titleLarge: getRegularStyle(color: Colors.white,fontSize: FontSize.s30,fontFamily: FontConstants.kGtSectraFine),
+      headlineLarge: getBoldStyle(color: ColorManger.kBlack,fontSize: FontSize.s18),
     ),
   );
 
