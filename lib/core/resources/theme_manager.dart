@@ -17,7 +17,8 @@ ThemeData getApplicationDarkTheme() {
       bodyLarge: getRegularStyle(color: Colors.white,fontSize: FontSize.s20,),
       bodySmall: getRegularStyle(color: Colors.white,fontSize: FontSize.s14),
       labelLarge: getBoldStyle(color: Colors.white,fontSize: FontSize.s20),
-      headlineSmall: getRegularStyle(color: Colors.white,fontSize: FontSize.s16)
+      headlineSmall: getRegularStyle(color: Colors.white,fontSize: FontSize.s16),
+      titleLarge: getRegularStyle(color: Colors.white,fontSize: FontSize.s30,fontFamily: FontConstants.kGtSectraFine),
     ),
   );
 
