@@ -1,5 +1,6 @@
 import 'package:bookly/core/resources/values_manager.dart';
 import 'package:bookly/features/home_screen/presentation/view/widgets/custom_books_list_item.dart';
+import 'package:bookly/features/home_screen/presentation/view/widgets/custom_rating_row.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_book_details_app_bar.dart';
@@ -30,6 +31,10 @@ class BookDetailsBody extends StatelessWidget {
           'Rudyard Kipling',
           style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: Colors.white.withOpacity(0.7)),
         ),
+        const SizedBox(
+          height: AppSize.s18,
+        ),
+        const CustomRatingRow(),
       ],
     );
   }

@@ -1,7 +1,5 @@
 import 'package:bookly/core/resources/app_routes.dart';
-import 'package:bookly/features/home_screen/presentation/view/book_details.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/resources/font_manager.dart';
@@ -17,11 +15,13 @@ class BestSellerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
-          left: AppPadding.p30, right: AppPadding.p30,),
+        left: AppPadding.p30,
+        right: AppPadding.p30,
+      ),
       child: GestureDetector(
-        onTap: (){
+        onTap: () {
           GoRouter.of(context).push(AppRoutes.bookDetailsViewRoute);
-         // Navigator.push(context, MaterialPageRoute(builder: (context) => BookDetails(),));
+          // Navigator.push(context, MaterialPageRoute(builder: (context) => BookDetails(),));
         },
         child: SizedBox(
           height: 120,
@@ -58,7 +58,8 @@ class BestSellerItem extends StatelessWidget {
                           style: Theme.of(context)
                               .textTheme
                               .bodyLarge
-                              ?.copyWith(fontFamily: FontConstants.kGtSectraFine),
+                              ?.copyWith(
+                                  fontFamily: FontConstants.kGtSectraFine),
                         )),
                     Text(
                       'J.K. Rowling',
@@ -67,7 +68,18 @@ class BestSellerItem extends StatelessWidget {
                           .bodySmall
                           ?.copyWith(color: Colors.white.withOpacity(0.7)),
                     ),
-                    const CustomRatingRow()
+                    Expanded(
+                      child: Row(
+                        children: [
+                          Text(
+                            '19.99 € ',
+                            style: Theme.of(context).textTheme.labelLarge,
+                          ),
+                          const Spacer(),
+                          const CustomRatingRow()
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               )
@@ -78,5 +90,3 @@ class BestSellerItem extends StatelessWidget {
     );
   }
 }
-
-

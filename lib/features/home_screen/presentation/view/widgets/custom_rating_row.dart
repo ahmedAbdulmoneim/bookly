@@ -10,42 +10,33 @@ class CustomRatingRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Row(
-        children: [
-          Text(
-            '19.99 € ',
-            style: Theme.of(context).textTheme.labelLarge,
-          ),
-          const Spacer(),
-          Row(
-            children: [
-              const Icon(
-                FontAwesomeIcons.solidStar,
-                color: Color(0xFFFFDD4F),
-              ),
-              const SizedBox(
-                width: 6,
-              ),
-              Text(
-                '4.8',
-                style: Theme.of(context).textTheme.headlineSmall,
-              ),
-              const SizedBox(
-                width: AppSize.s4,
-              ),
-              Text(
-                '(2390)',
-                style: Theme.of(context)
-                    .textTheme
-                    .bodySmall
-                    ?.copyWith(
-                    color: Colors.white.withOpacity(0.5)),
-              )
-            ],
-          )
-        ],
-      ),
+    return  Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const Icon(
+          FontAwesomeIcons.solidStar,
+          color: Color(0xFFFFDD4F),
+          size: AppSize.s14,
+        ),
+        const SizedBox(
+          width: AppSize.s8,
+        ),
+        Text(
+          '4.8',
+          style: Theme.of(context).textTheme.headlineSmall,
+        ),
+        const SizedBox(
+          width: AppSize.s4,
+        ),
+        Text(
+          '(2390)',
+          style: Theme.of(context)
+              .textTheme
+              .bodySmall
+              ?.copyWith(
+              color: Colors.white.withOpacity(0.5)),
+        )
+      ],
     );
   }
 }
