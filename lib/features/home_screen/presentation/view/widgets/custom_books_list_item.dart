@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/resources/values_manager.dart';
 
-class CustomBooksListViewItem extends StatelessWidget {
-  const CustomBooksListViewItem({
+class CustomBookImage extends StatelessWidget {
+  const CustomBookImage({
     super.key,
   });
 

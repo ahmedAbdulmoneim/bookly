@@ -1,46 +1,24 @@
 import 'package:bookly/core/resources/values_manager.dart';
+import 'package:bookly/features/home_screen/presentation/view/widgets/custom_books_list_item.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'custom_book_details_app_bar.dart';
 
 class BookDetailsBody extends StatelessWidget {
   const BookDetailsBody({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [CustomAppBarBookDetails()],
-    );
-  }
-}
+    return  Column(
+      children: [
+        const CustomAppBarBookDetails(),
+        Padding(
+          padding: EdgeInsets.only(left: MediaQuery.sizeOf(context).width * 0.28,right: MediaQuery.sizeOf(context).width * 0.28,top: 36),
+          child: const CustomBookImage(),
+        ),
 
-class CustomAppBarBookDetails extends StatelessWidget {
-  const CustomAppBarBookDetails({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(
-          left: AppPadding.p22, right: AppPadding.p22, top: AppPadding.p44),
-      child: Row(
-        children: [
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.close,
-              size: 25,
-            ),
-          ),
-          const Spacer(),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.shopping_cart_outlined,
-              size: 25,
-            ),
-          )
-        ],
-      ),
+      ],
     );
   }
 }
