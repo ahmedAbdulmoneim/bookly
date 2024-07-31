@@ -1,6 +1,11 @@
+import 'package:bookly/core/errors/fialuer.dart';
+import 'package:dartz/dartz.dart';
+
 import '../models/book_model.dart';
 
 abstract class HomeRepo{
-  Future<List<BookModel>> fetchBestSellerBooks();
-  Future<List<BookModel>> fetchFeaturedBooks();
+  // using either to return more than data type
+
+  Future<Either<Failure,List<BookModel>>> fetchBestSellerBooks();
+  Future<Either<Failure,List<BookModel>>> fetchFeaturedBooks();
 }
