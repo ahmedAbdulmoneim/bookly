@@ -1,3 +1,3 @@
 class AppStrings{
-  static const bestSeller = "Best Seller";
+  static const newestBooks = "Newest Books";
 }
