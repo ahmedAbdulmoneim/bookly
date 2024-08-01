@@ -46,6 +46,8 @@ dependencies:
   bloc:
   flutter_bloc: 
   get_it: ^7.7.0
+  conditional_builder_null_safety:
+  shimmer: ^3.0.0
 
 dev_dependencies:
   flutter_test:
