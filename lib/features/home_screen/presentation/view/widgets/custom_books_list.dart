@@ -1,7 +1,7 @@
 import 'package:bookly/core/widgets/custom_error_widget.dart';
-import 'package:bookly/core/widgets/custom_shimmer_indicator.dart';
 import 'package:bookly/features/home_screen/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home_screen/presentation/manager/featured_books_cubit/featured_books_states.dart';
+import 'package:bookly/features/home_screen/presentation/view/widgets/shimmer_book_image.dart';
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,18 +17,15 @@ class CustomBooksListView extends StatelessWidget {
       padding: const EdgeInsets.only(left: AppPadding.p30, top: AppPadding.p36),
       child: SizedBox(
         height: MediaQuery.sizeOf(context).height * 0.25,
-        child: BlocConsumer<FeaturedBooksCubit, FeaturedBooksStates>(
-          listener: (context, state) {},
+        child: BlocBuilder<FeaturedBooksCubit, FeaturedBooksStates>(
           builder: (context, state) {
             return ConditionalBuilder(
               builder: (context) => state is FeaturedBooksFailureState
                   ? CustomErrorWidget(errorMessage: state.errorMessage)
-                  : CustomShimmerLoading(
-                      shimmerChild: ListView.builder(
+                  :  ListView.builder(
                         scrollDirection: Axis.horizontal,
                         itemBuilder: (context, index) =>
-                            const CustomBookImage(),
-                      ),
+                            const ShimmerBookImage(),
                     ),
               fallback: (context) => state is FeaturedBooksSuccessState
                   ? ListView.builder(

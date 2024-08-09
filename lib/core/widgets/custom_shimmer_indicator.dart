@@ -9,8 +9,8 @@ class CustomShimmerLoading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
-      baseColor: Colors.grey[400]!,
-      highlightColor: Colors.grey[200]!,
+      baseColor: const Color(0xff3A3A3A),
+      highlightColor: Colors.grey.shade700,
       enabled: true,
       child: shimmerChild,
     );
