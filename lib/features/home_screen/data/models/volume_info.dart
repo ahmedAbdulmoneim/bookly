@@ -14,6 +14,8 @@ class VolumeInfo {
   int? pageCount;
   String? printType;
   List<String>? categories;
+  dynamic averageRating ;
+  int? ratingCount;
   String? maturityRating;
   bool? allowAnonLogging;
   String? contentVersion;
@@ -32,6 +34,8 @@ class VolumeInfo {
         this.industryIdentifiers,
         this.readingModes,
         this.pageCount,
+        this.averageRating,
+        this.ratingCount,
         this.printType,
         this.categories,
         this.maturityRating,
@@ -61,6 +65,8 @@ class VolumeInfo {
     pageCount = json['pageCount'];
     printType = json['printType'];
     categories = json['categories'].cast<String>();
+    averageRating = json["averageRating"];
+    ratingCount = json["ratingsCount"];
     maturityRating = json['maturityRating'];
     allowAnonLogging = json['allowAnonLogging'];
     contentVersion = json['contentVersion'];

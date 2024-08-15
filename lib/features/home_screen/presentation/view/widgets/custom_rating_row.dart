@@ -5,8 +5,10 @@ import '../../../../../core/resources/values_manager.dart';
 
 class CustomRatingRow extends StatelessWidget {
   const CustomRatingRow({
-    super.key,
+    super.key, required this.rating, required this.ratingCount,
   });
+  final dynamic rating ;
+  final int ratingCount ;
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +24,14 @@ class CustomRatingRow extends StatelessWidget {
           width: AppSize.s8,
         ),
         Text(
-          '4.8',
+          rating.toString(),
           style: Theme.of(context).textTheme.headlineSmall,
         ),
         const SizedBox(
           width: AppSize.s4,
         ),
         Text(
-          '(2390)',
+          '($ratingCount)',
           style: Theme.of(context)
               .textTheme
               .bodySmall

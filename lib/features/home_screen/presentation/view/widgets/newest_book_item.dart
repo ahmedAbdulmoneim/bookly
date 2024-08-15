@@ -72,7 +72,10 @@ class BookListViewItem extends StatelessWidget {
                           style: Theme.of(context).textTheme.labelLarge,
                         ),
                         const Spacer(),
-                        const CustomRatingRow()
+                        CustomRatingRow(
+                          rating: book.volumeInfo?.averageRating ?? 0,
+                          ratingCount: book.volumeInfo?.ratingCount ?? 0 ,
+                        )
                       ],
                     ),
                   ),

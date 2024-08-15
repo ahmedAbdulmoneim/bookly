@@ -46,7 +46,10 @@ class BookDetailsBody extends StatelessWidget {
               const SizedBox(
                 height: AppSize.s18,
               ),
-              const CustomRatingRow(),
+              const CustomRatingRow(
+                rating: 0.0,
+                ratingCount: 0,
+              ),
               const SizedBox(
                 height: AppSize.s40,
               ),
