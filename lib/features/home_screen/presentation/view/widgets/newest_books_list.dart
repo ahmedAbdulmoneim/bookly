@@ -24,17 +24,24 @@ class NewestBooksList extends StatelessWidget {
                     left: AppPadding.p30, right: AppPadding.p30),
                 child: CustomErrorWidget(errorMessage: state.errorMessage),
               ),
-              initialItemCount: 10,
+              initialItemCount: 5,
             );
           } else if (state is NewestBooksSuccessState) {
             return SliverAnimatedList(
-              itemBuilder: (context, index, animation) => Padding(
-                padding: const EdgeInsets.only(
-                    left: AppPadding.p30, right: AppPadding.p30),
-                child: BookListViewItem(book: state.books[index]),
-              ),
+              itemBuilder: (context, index, animation) {
+                if (index < state.books.length) {
+                  return Padding(
+                    padding: const EdgeInsets.only(
+                        left: AppPadding.p30, right: AppPadding.p30),
+                    child: BookListViewItem(book: state.books[index]),
+                  );
+                } else {
+                  return Container(); // Return an empty container or handle the case appropriately.
+                }
+              },
               initialItemCount: state.books.length,
             );
+
           }
           return SliverAnimatedList(
             itemBuilder: (context, index, animation) => const Padding(

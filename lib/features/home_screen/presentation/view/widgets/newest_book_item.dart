@@ -33,7 +33,7 @@ class BookListViewItem extends StatelessWidget {
                   borderRadius: BorderRadius.circular(AppSize.s12),
                   child: CachedNetworkImage(
                     fit: BoxFit.fill,
-                    imageUrl: "${book.volumeInfo!.imageLinks!.smallThumbnail}",
+                    imageUrl: book.volumeInfo!.imageLinks?.smallThumbnail != null ? "${book.volumeInfo!.imageLinks!.smallThumbnail}" : "https://i.imgur.com/4X9z0so.png",
                   ),
                 ),
               )
@@ -59,6 +59,8 @@ class BookListViewItem extends StatelessWidget {
                       )),
                   Text(
                     book.volumeInfo!.authors![0],
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: Theme.of(context)
                         .textTheme
                         .bodySmall
