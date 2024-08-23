@@ -34,6 +34,7 @@ class BookDetailsBody extends StatelessWidget {
               ),
               Text(
                 bookModel.volumeInfo!.title!,
+                textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(

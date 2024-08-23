@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/resources/values_manager.dart';
 
@@ -15,10 +16,12 @@ class CustomAppBarBookDetails extends StatelessWidget {
       child: Row(
         children: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).pop();
+            },
             icon: const Icon(
               Icons.close,
-              size: 25,
+              size: AppSize.s25,
             ),
           ),
           const Spacer(),
@@ -26,7 +29,7 @@ class CustomAppBarBookDetails extends StatelessWidget {
             onPressed: () {},
             icon: const Icon(
               Icons.shopping_cart_outlined,
-              size: 25,
+              size: AppSize.s25,
             ),
           )
         ],
