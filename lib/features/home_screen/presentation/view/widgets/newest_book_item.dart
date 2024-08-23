@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../../../core/resources/assets_manager.dart';
 import '../../../../../core/resources/font_manager.dart';
 import '../../../../../core/resources/values_manager.dart';
 import 'custom_rating_row.dart';
@@ -33,13 +34,13 @@ class BookListViewItem extends StatelessWidget {
                   borderRadius: BorderRadius.circular(AppSize.s12),
                   child: CachedNetworkImage(
                     fit: BoxFit.fill,
-                    imageUrl: book.volumeInfo!.imageLinks?.smallThumbnail != null ? "${book.volumeInfo!.imageLinks!.smallThumbnail}" : "https://i.imgur.com/4X9z0so.png",
+                    imageUrl: book.volumeInfo!.imageLinks?.smallThumbnail != null ? "${book.volumeInfo!.imageLinks!.smallThumbnail}" : ImagesData.noCover,
                   ),
                 ),
               )
             ),
             const SizedBox(
-              width: 30,
+              width: AppSize.s30,
             ),
             Expanded(
               child: Column(
