@@ -4,7 +4,6 @@ import 'package:bookly/features/home_screen/data/models/book_model.dart';
 import 'package:bookly/features/home_screen/data/repo/home_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:get/get.dart';
 
 class HomeRepoImplementation implements HomeRepo {
   final ApiService apiService;
@@ -16,15 +15,10 @@ class HomeRepoImplementation implements HomeRepo {
     try {
       var data = await apiService.getRequest(
           endPoint:
-          'volumes?Filtering=free-ebooks&q=subject:computers&sorting=newest&key=AIzaSyAjEz5M60bEgT4UvUhNuCMDl4rADhiT3a0');
+              'volumes?Filtering=free-ebooks&q=subject:computers&sorting=newest&key=AIzaSyAjEz5M60bEgT4UvUhNuCMDl4rADhiT3a0');
       List<BookModel> books = [];
       for (var item in data.data['items']) {
-        try{
-          books.add(BookModel.fromJson(item));
-        }catch(e){
-          print(e);
-        }
-
+        books.add(BookModel.fromJson(item));
       }
       return right(books);
     } catch (e) {
@@ -40,7 +34,27 @@ class HomeRepoImplementation implements HomeRepo {
     try {
       var data = await apiService.getRequest(
           endPoint:
-          'volumes?Filtering=free-ebooks&q=subject:programming&key=AIzaSyAjEz5M60bEgT4UvUhNuCMDl4rADhiT3a0');
+              'volumes?Filtering=free-ebooks&q=subject:programming&key=AIzaSyAjEz5M60bEgT4UvUhNuCMDl4rADhiT3a0');
+      List<BookModel> books = [];
+      for (var item in data.data['items']) {
+        books.add(BookModel.fromJson(item));
+      }
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromError(e));
+      }
+      return left(ServerFailure(e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
+      {required String category}) async {
+    try {
+      var data = await apiService.getRequest(
+          endPoint:
+              'volumes?Filtering=free-ebooks&q=subject:programming&sorting=relevance&key=AIzaSyAjEz5M60bEgT4UvUhNuCMDl4rADhiT3a0');
       List<BookModel> books = [];
       for (var item in data.data['items']) {
         books.add(BookModel.fromJson(item));
