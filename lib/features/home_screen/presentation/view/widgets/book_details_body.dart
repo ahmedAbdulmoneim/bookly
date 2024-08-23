@@ -1,4 +1,5 @@
 import 'package:bookly/core/resources/values_manager.dart';
+import 'package:bookly/features/home_screen/data/models/book_model.dart';
 import 'package:bookly/features/home_screen/presentation/view/widgets/custom_books_list_item.dart';
 import 'package:bookly/features/home_screen/presentation/view/widgets/custom_rating_row.dart';
 import 'package:bookly/features/home_screen/presentation/view/widgets/similar_books_list.dart';
@@ -8,8 +9,8 @@ import 'books_action_button.dart';
 import 'custom_book_details_app_bar.dart';
 
 class BookDetailsBody extends StatelessWidget {
-  const BookDetailsBody({super.key});
-
+  const BookDetailsBody({super.key,required this.bookModel});
+ final BookModel bookModel ;
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -24,20 +25,22 @@ class BookDetailsBody extends StatelessWidget {
                     left: MediaQuery.sizeOf(context).width * 0.28,
                     right: MediaQuery.sizeOf(context).width * 0.28,
                     top: 36),
-                child: const CustomBookImage(),
+                child:  CustomBookImage(
+                  bookImage: bookModel.volumeInfo?.imageLinks?.smallThumbnail,
+                ),
               ),
               const SizedBox(
                 height: AppSize.s40,
               ),
               Text(
-                'The Jungle Book',
+                bookModel.volumeInfo!.title!,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
               const SizedBox(
                 height: AppSize.s5,
               ),
               Text(
-                'Rudyard Kipling',
+                bookModel.volumeInfo!.authors![0],
                 style: Theme.of(context)
                     .textTheme
                     .headlineMedium
@@ -46,9 +49,9 @@ class BookDetailsBody extends StatelessWidget {
               const SizedBox(
                 height: AppSize.s18,
               ),
-              const CustomRatingRow(
-                rating: 0.0,
-                ratingCount: 0,
+               CustomRatingRow(
+                rating: bookModel.volumeInfo?.averageRating ?? 0,
+                ratingCount: bookModel.volumeInfo?.ratingCount ?? 0,
               ),
               const SizedBox(
                 height: AppSize.s40,

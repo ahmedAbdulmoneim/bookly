@@ -1,3 +1,4 @@
+import 'package:bookly/core/resources/assets_manager.dart';
 import 'package:bookly/core/resources/values_manager.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -18,9 +19,7 @@ class CustomBookImage extends StatelessWidget {
           child: CachedNetworkImage(
             fit: BoxFit.fill,
             errorWidget: (context, url, error) => const Icon(Icons.error),
-            imageUrl: bookImage ??
-                "https://books.google.com/books/content?id=9GwrmHRl490C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          ),
+            imageUrl: bookImage ?? ImagesData.noCover),
         ),
       ),
     );
