@@ -1,6 +1,8 @@
 import 'package:bookly/core/resources/color_manager.dart';
 import 'package:bookly/core/resources/values_manager.dart';
+import 'package:bookly/features/search/presentation/manager/search_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomSearchBox extends StatelessWidget {
   const CustomSearchBox({super.key});
@@ -9,6 +11,10 @@ class CustomSearchBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       cursorColor: ColorManger.kBlue,
+      onFieldSubmitted: (value) async {
+        await BlocProvider.of<SearchCubit>(context)
+            .search(searchKeyWord: value);
+      },
       decoration: InputDecoration(
         suffixIcon: const Icon(
           Icons.search,

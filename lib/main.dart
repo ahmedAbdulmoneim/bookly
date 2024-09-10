@@ -9,7 +9,7 @@ import 'core/resources/theme_manager.dart';
 import 'features/home_screen/data/repo/home_repo_implementation.dart';
 
 void main() {
-  setupServicLocator();
+  setupServiceLocator();
   runApp(const MyApp());
 }
 

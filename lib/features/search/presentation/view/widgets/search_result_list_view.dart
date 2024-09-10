@@ -1,19 +1,21 @@
+import 'package:bookly/features/home_screen/data/models/book_model.dart';
+import 'package:bookly/features/home_screen/presentation/view/widgets/custom_books_list_item.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../../../../../core/resources/values_manager.dart';
-import '../../../../home_screen/presentation/view/widgets/newest_book_item.dart';
 
 class SearchResultListView extends StatelessWidget {
-  const SearchResultListView({super.key});
+  const SearchResultListView({super.key, required this.books});
+
+  final List<BookModel> books;
 
   @override
   Widget build(BuildContext context) {
-    return Container();
-    //   ListView.separated(
-    //   padding: EdgeInsets.zero,
-    //   separatorBuilder: (context, index) => const SizedBox(height: AppSize.s20,),
-    //   itemBuilder: (context, index) => const BookListViewItem(book: ,),
-    //   itemCount: 5,
-    // );
+    return ListView.separated(
+      padding: EdgeInsets.zero,
+      separatorBuilder: (context, index) => const SizedBox(height: AppSize.s20),
+      itemBuilder: (context, index) => const CustomBookImage(),
+      itemCount: books.length,
+    );
   }
 }
